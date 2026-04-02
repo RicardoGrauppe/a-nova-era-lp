@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧠 A Nova Era, Aprenda IA, Marketing e Vídeo para Escalar Seu Negócio</title>
+<meta name="description" content="A plataforma onde empreendedores aprendem a usar IA, marketing e vídeo para crescer no digital. Acesse por $97/mês.">
+<style>
+  :root {
+    --purple: #ef4444;
+    --pink:   #f87171;
+    --orange: #fca5a5;
+    --bg:     #1e1e1e;
+    --bg2:    #252526;
+    --bg3:    #2d2d30;
+    --border: #3e3e42;
+    --text:   #ffffff;
+    --muted:  #a3a3a8;
+    --grad:   linear-gradient(135deg, #991b1b, #dc2626, #f87171);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── UTIL ── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .grad-text {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28em;
+    text-decoration: none;
+  }
+  .brand-emoji {
+    font-style: normal;
+    line-height: 1;
+    flex-shrink: 0;
+    background: none !important;
+    -webkit-background-clip: border-box !important;
+    background-clip: border-box !important;
+    -webkit-text-fill-color: unset !important;
+    color: unset;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--grad);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity .2s, transform .2s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { opacity:.88; transform: translateY(-2px); }
+  .btn-ghost {
+    display: inline-block;
+    color: var(--text);
+    font-weight: 600;
+    font-size: .9rem;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    transition: border-color .2s;
+  }
+  .btn-ghost:hover { border-color: var(--purple); }
+
+  section { padding: 90px 0; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top:0; z-index: 100;
+    background: rgba(30,30,30,.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  }
+  .nav-logo {
+    font-size: 1.25rem; font-weight: 800;
+    text-decoration: none;
+  }
+  .nav-logo-text { color: #ffffff; }
+  .nav-cta { font-size: .88rem; padding: 10px 24px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 100px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:'';
+    position: absolute;
+    top: -200px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(239,68,68,.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 820px;
+    margin: 0 auto 24px;
+    letter-spacing: -0.02em;
+  }
+  .hero p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+  }
+  .hero-cta-group {
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px; flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+  .hero-proof {
+    display: flex; align-items: center; justify-content: center;
+    gap: 32px; flex-wrap: wrap;
+  }
+  .proof-item { text-align: center; }
+  .proof-num {
+    font-size: 2rem; font-weight: 800;
+    background: var(--grad);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .proof-label { font-size: .75rem; color: var(--muted); margin-top: 2px; }
+  .proof-divider { width:1px; height:40px; background: var(--border); }
+
+  /* ── TOOLS BAR ── */
+  .tools-bar {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg2);
+  }
+  .tools-inner {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 22px;
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+  }
+  .tools-label {
+    font-size: .78rem; color: var(--muted);
+    font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+  .tools-carousel {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  .tools-carousel-track {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(24px, 3.5vw, 48px);
+    width: max-content;
+    animation: tools-marquee 45s linear infinite;
+  }
+  @keyframes tools-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tools-carousel-track { animation: none; justify-content: center; flex-wrap: wrap; width: 100%; max-width: 900px; margin: 0 auto; }
+    .tools-carousel { mask-image: none; -webkit-mask-image: none; }
+    .tools-logo-dupe { display: none !important; }
+  }
+  .tools-logo-item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    min-width: 56px;
+    max-width: 104px;
+    padding: 0 4px;
+    opacity: .92;
+    transition: opacity .2s;
+  }
+  .tools-logo-item:hover { opacity: 1; }
+  .tools-logo-item img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+    filter: grayscale(.12) brightness(1.12);
+    flex-shrink: 0;
+  }
+  .tools-logo-name {
+    font-size: .65rem;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.25;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* ── PROBLEM ── */
+  .problem { background: var(--bg2); }
+  .section-label {
+    font-size: .75rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--purple);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 800; line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .section-sub {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 580px; margin-bottom: 48px;
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .problem-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .problem-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .problem-text { font-size: .9rem; color: #d4d4d8; line-height: 1.5; }
+  .problem-text strong { color: var(--text); }
+
+  /* ── TRANSFORMATION ── */
+  .transform-wrap {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    align-items: stretch;
+  }
+  @media(max-width:640px) { .transform-wrap { grid-template-columns: 1fr; } }
+  .transform-side {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+  }
+  .transform-side.before {
+    border-color: rgba(239,68,68,.45);
+    background: linear-gradient(180deg, rgba(239,68,68,.1) 0%, rgba(239,68,68,.04) 100%);
+  }
+  .transform-side.after {
+    border-color: rgba(34,197,94,.42);
+    background: linear-gradient(180deg, rgba(34,197,94,.1) 0%, rgba(34,197,94,.04) 100%);
+  }
+  .transform-side-title {
+    font-size: .8rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .08em;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .transform-side.before .transform-side-title { border-bottom-color: rgba(239,68,68,.28); }
+  .transform-side.after .transform-side-title { border-bottom-color: rgba(34,197,94,.3); }
+  .transform-side-title.red { color: #f87171; }
+  .transform-side-title.green { color: #86efac; }
+  .transform-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .transform-list li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: .9rem; color: #d4d4d8;
+  }
+  .transform-list li span { font-size: 1rem; flex-shrink:0; }
+
+  /* ── MODULES ── */
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 18px;
+  }
+  .module-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .2s, border-color .2s;
+  }
+  .module-card:hover { transform: translateY(-3px); border-color: rgba(239,68,68,.4); }
+  .module-card-top {
+    height: 4px;
+    background: var(--grad);
+  }
+  .module-card-body { padding: 22px; }
+  .module-card-header {
+    display: flex; gap: 12px; align-items: center;
+    margin-bottom: 14px;
+  }
+  .module-emoji { font-size: 1.5rem; }
+  .module-name { font-size: 1rem; font-weight: 700; line-height: 1.3; margin-top: 0; }
+  .module-desc { font-size: .83rem; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+  .module-lessons-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .module-lessons-list li {
+    font-size: .78rem; color: #b4b4bc;
+    display: flex; align-items: flex-start; gap: 7px;
+  }
+  .module-lessons-list li::before {
+    content: '→';
+    color: var(--purple);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .module-tag {
+    display: inline-block;
+    font-size: .65rem; font-weight: 700;
+    padding: 3px 8px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: .06em;
+    margin-bottom: 8px;
+  }
+  .tag-live { background: #3f1518; color: #fca5a5; }
+  .tag-coming { background: #431407; color: #fdba74; }
+
+  /* ── MONTHLY ── */
+  .monthly { background: var(--bg2); }
+  .monthly-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px;
+  }
+  .monthly-card {
+    background: rgba(239,68,68,.08);
+    border: 1px solid rgba(239,68,68,.22);
+    border-radius: 14px;
+    padding: 22px;
+    text-align: center;
+  }
+  .monthly-icon { font-size: 1.8rem; margin-bottom: 10px; }
+  .monthly-title { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+  .monthly-desc { font-size: .8rem; color: var(--muted); line-height: 1.5; }
+
+  /* ── ABOUT ── */
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: center;
+  }
+  @media(max-width:700px) { .about-inner { grid-template-columns: 1fr; } }
+  .about-photo {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .about-content .section-label { margin-bottom: 8px; }
+  .about-list { list-style: none; margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+  .about-list li { display: flex; gap: 10px; font-size: .9rem; color: #d4d4d8; align-items: flex-start; }
+  .about-list li span { font-size: 1.1rem; flex-shrink:0; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--bg2); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px;
+  }
+  .testimonial-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px;
+  }
+  .testimonial-stars { color: #fbbf24; font-size: .9rem; margin-bottom: 14px; letter-spacing: 2px; }
+  .testimonial-text {
+    font-size: .9rem; color: #e4e4e7; line-height: 1.6;
+    margin-bottom: 18px; font-style: italic;
+  }
+  .testimonial-text::before { content: '"'; }
+  .testimonial-text::after { content: '"'; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--grad);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: .95rem; color: #fff;
+    flex-shrink: 0;
+  }
+  .testimonial-name { font-size: .88rem; font-weight: 700; }
+  .testimonial-role { font-size: .75rem; color: var(--muted); }
+
+  /* ── PRICING ── */
+  .pricing-wrap {
+    display: flex; justify-content: center;
+  }
+  .pricing-card {
+    background: var(--bg2);
+    border: 1px solid rgba(239,68,68,.45);
+    border-radius: 24px;
+    padding: 48px 44px;
+    max-width: 520px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+  }
+  .pricing-card::before {
+    content:'';
+    position: absolute; inset:-1px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(185,28,28,.35), rgba(239,68,68,.22), rgba(248,113,113,.14));
+    z-index:-1;
+  }
+  .pricing-badge {
+    display: inline-block;
+    background: var(--grad);
+    color: #fff;
+    font-size: .72rem; font-weight: 800;
+    letter-spacing: .08em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .pricing-plan { font-size: 1rem; color: var(--muted); margin-bottom: 28px; }
+  .pricing-features { list-style: none; text-align: left; margin-bottom: 36px; display: flex; flex-direction: column; gap: 12px; }
+  .pricing-features li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: .9rem; color: #e4e4e7;
+  }
+  .pricing-features li span { font-size: 1.1rem; flex-shrink:0; color: #f87171; }
+  .pricing-cta { width: 100%; text-align: center; font-size: 1.05rem; padding: 18px; }
+  .pricing-guarantee {
+    margin-top: 18px; font-size: .78rem; color: var(--muted);
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+
+  /* ── FAQ ── */
+  .faq { background: var(--bg2); }
+  .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 22px;
+    cursor: pointer;
+    font-size: .95rem; font-weight: 600;
+    user-select: none;
+    transition: color .2s;
+  }
+  .faq-question:hover { color: var(--purple); }
+  .faq-icon {
+    font-size: 1.2rem; flex-shrink:0;
+    transition: transform .3s;
+    color: var(--purple);
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s ease, padding .35s;
+    font-size: .88rem; color: var(--muted); line-height: 1.7;
+    padding: 0 22px;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 0 22px 20px;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    text-align: center;
+    background: radial-gradient(ellipse at center, rgba(239,68,68,.1) 0%, transparent 70%);
+    padding: 100px 0 80px;
+  }
+  .final-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  .final-cta p {
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 500px; margin: 0 auto 40px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 32px 0;
+    text-align: center;
+  }
+  .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .footer-logo { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+  .footer-text { font-size: .78rem; color: var(--muted); }
+
+  /* ── MOBILE ── */
+  @media(max-width:600px) {
+    section { padding: 64px 0; }
+    .pricing-card { padding: 32px 24px; }
+    .about-inner { gap: 32px; }
+    .proof-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo brand-mark"><span class="brand-emoji" aria-hidden="true">🧠</span><span class="nav-logo-text">A Nova Era</span></a>
+    <a href="#pricing" class="btn-primary nav-cta">Entrar Agora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>
+      Aprenda IA, Marketing e Vídeo.<br>
+      <span class="grad-text">Escale Seu Negócio de Verdade.</span>
+    </h1>
+    <p>
+      A plataforma que reúne tudo que você precisa para trabalhar no digital,
+      de onde quiser, do jeito que quiser, com IA fazendo o trabalho pesado por você.
+    </p>
+    <div class="hero-cta-group">
+      <a href="#pricing" class="btn-primary">Quero Entrar na 🧠 A Nova Era →</a>
+      <a href="#modules" class="btn-ghost">Ver o que está dentro</a>
+    </div>
+    <div class="hero-proof">
+      <div class="proof-item">
+        <div class="proof-num">80+</div>
+        <div class="proof-label">Visionários treinando</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-item">
+        <div class="proof-num">∞</div>
+        <div class="proof-label">Aulas novas todo mês</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS BAR -->
+<div class="tools-bar">
+  <div class="tools-inner">
+    <p class="tools-label">Você vai dominar</p>
+    <div class="tools-carousel" role="region" aria-label="Ferramentas ensinadas na 🧠 A Nova Era">
+      <div class="tools-carousel-track">
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=openai.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">ChatGPT</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=n8n.io&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">n8n</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=trae.ai&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Trae AI</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=clickup.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">ClickUp CRM</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=lovable.dev&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Lovable</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=cursor.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Cursor AI</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Canva AI</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">CapCut</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=opus.pro&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Opus Clip</span></div>
+        <div class="tools-logo-item"><img src="https://www.google.com/s2/favicons?domain=rork.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Rork.com</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=openai.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">ChatGPT</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=n8n.io&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">n8n</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=trae.ai&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Trae AI</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=clickup.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">ClickUp CRM</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=lovable.dev&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Lovable</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=cursor.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Cursor AI</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=canva.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Canva AI</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=capcut.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">CapCut</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=opus.pro&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Opus Clip</span></div>
+        <div class="tools-logo-item tools-logo-dupe" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=rork.com&amp;sz=128" alt="" width="40" height="40" loading="lazy" decoding="async"><span class="tools-logo-name">Rork.com</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <p class="section-label">Você se reconhece aqui?</p>
+    <h2 class="section-title">Todo mundo fala em IA.<br>Mas ninguém ensina a usar de verdade.</h2>
+    <p class="section-sub">Se você já se sentiu assim, você não está sozinho. E a culpa não é sua.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">😮‍💨</div>
+        <div class="problem-text"><strong>Você tem um negócio</strong>, mas não sabe como usar o digital para escalar. Vê os concorrentes crescendo e não entende como.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🌀</div>
+        <div class="problem-text"><strong>Você fica perdido</strong> com tanta ferramenta nova. ChatGPT, automação, site com IA... não sabe por onde começar nem o que priorizar.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <div class="problem-text"><strong>Falta tempo</strong> pra estudar. Você trabalha o dia todo e quando sobra energia, não sabe o que estudar pra ter resultado rápido.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">😤</div>
+        <div class="problem-text"><strong>Já tentou cursos</strong> que prometeram o mundo e não entregaram nada prático. Muita teoria, pouca aplicação real.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📱</div>
+        <div class="problem-text"><strong>Você quer captação de vídeo</strong>, marketing e automação, mas eles estão todos em lugares diferentes, sem conexão entre si.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💸</div>
+        <div class="problem-text"><strong>Você quer uma nova renda</strong> ou já tem um negócio mas precisa de mais clientes. Só que não sabe o caminho certo no digital.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION -->
+<section>
+  <div class="container">
+    <p class="section-label">A Virada</p>
+    <h2 class="section-title">Antes e depois da 🧠 A Nova Era</h2>
+    <p class="section-sub" style="margin-bottom:40px;">Isso é o que muda quando você para de tentar sozinho e tem um caminho claro na frente.</p>
+    <div class="transform-wrap">
+      <div class="transform-side before">
+        <p class="transform-side-title red">❌ Antes, sem 🧠 A Nova Era</p>
+        <ul class="transform-list">
+          <li><span>😰</span> Postando no Instagram e ninguém vendo</li>
+          <li><span>😵</span> Perdendo leads por não ter processo de vendas</li>
+          <li><span>🤷</span> Usando IA de forma rasa, sem extrair resultado real</li>
+          <li><span>📹</span> Com vergonha de aparecer no vídeo sem saber fazer direito</li>
+          <li><span>💭</span> Sem site profissional pra passar credibilidade</li>
+          <li><span>🔄</span> Fazendo tudo na mão, sem automação nenhuma</li>
+          <li><span>😴</span> Dependendo 100% do seu tempo pra faturar</li>
+        </ul>
+      </div>
+      <div class="transform-side after">
+        <p class="transform-side-title green">✅ Depois, com 🧠 A Nova Era</p>
+        <ul class="transform-list">
+          <li><span>🚀</span> Criando conteúdo com IA que atrai clientes no automático</li>
+          <li><span>🤖</span> SDR inteligente qualificando leads enquanto você dorme</li>
+          <li><span>⚡</span> Usando ChatGPT, N8N e Trae AI como extensão do seu time</li>
+          <li><span>🎥</span> Gravando vídeos com qualidade profissional e confiança</li>
+          <li><span>🌐</span> Site no ar em horas, com copy que converte</li>
+          <li><span>⚙️</span> Processos automatizados, ganhando tempo e dinheiro</li>
+          <li><span>💰</span> Negócio rodando mesmo quando você não está online</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section id="modules" style="background: var(--bg2);">
+  <div class="container">
+    <p class="section-label">Trilhas completas</p>
+    <h2 class="section-title">Cada assunto, uma trilha do início ao fim.</h2>
+    <p class="section-sub">Do zero ao avançado em cada tema. Cada trilha libera o próximo nível do seu negócio.</p>
+    <div class="modules-grid">
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-live">✓ Trilha disponível</span>
+          <div class="module-card-header">
+            <span class="module-emoji">🧠</span>
+            <div>
+              <div class="module-name">Despertar Digital</div>
+            </div>
+          </div>
+          <p class="module-desc">Fundamentos de IA para qualquer pessoa. Do zero ao uso real no seu negócio.</p>
+          <ul class="module-lessons-list">
+            <li>O que é IA e como ela transforma seu trabalho</li>
+            <li>Criando conteúdo profissional com ChatGPT</li>
+            <li>Método AIDA e CAPTA para posts que vendem</li>
+            <li>Persona e pesquisa de mercado com IA</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-live">✓ Trilha disponível</span>
+          <div class="module-card-header">
+            <span class="module-emoji">🤝</span>
+            <div>
+              <div class="module-name">Clientes e Vendas com IA</div>
+            </div>
+          </div>
+          <p class="module-desc">Organizar, qualificar e fechar clientes no automático. Chega de perder lead.</p>
+          <ul class="module-lessons-list">
+            <li>CRM no ClickUp do zero com pipeline completo</li>
+            <li>SDR inteligente com N8N, qualificação 24/7</li>
+            <li>Framework BANT para fechar mais e melhor</li>
+            <li>WhatsApp como máquina de vendas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-live">✓ Trilha disponível</span>
+          <div class="module-card-header">
+            <span class="module-emoji">🌐</span>
+            <div>
+              <div class="module-name">Presença Digital</div>
+            </div>
+          </div>
+          <p class="module-desc">Site profissional, marca e identidade no mundo online. Sem saber programar.</p>
+          <ul class="module-lessons-list">
+            <li>Landing pages com Lovable e Manus AI</li>
+            <li>Copy que converte, estrutura em 10 seções</li>
+            <li>Publicando no ar com GitHub + Vercel (de graça)</li>
+            <li>Identidade visual com Canva AI e Midjourney</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-live">✓ Trilha disponível</span>
+          <div class="module-card-header">
+            <span class="module-emoji">💻</span>
+            <div>
+              <div class="module-name">Programação e Apps com IA</div>
+            </div>
+          </div>
+          <p class="module-desc">O novo superpoder: criar sem saber programar. Apps, sistemas e automações.</p>
+          <ul class="module-lessons-list">
+            <li>Cursor AI e Trae AI, programação assistida</li>
+            <li>Apps iOS e Android com Rork.com</li>
+            <li>ChatGPT como professor de código</li>
+            <li>Automações avançadas com Make e Zapier</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-coming">Em breve</span>
+          <div class="module-card-header">
+            <span class="module-emoji">🎥</span>
+            <div>
+              <div class="module-name">Captação de Vídeo</div>
+            </div>
+          </div>
+          <p class="module-desc">O diferencial que ninguém ensina junto com IA. Vídeo profissional sem gastar muito.</p>
+          <ul class="module-lessons-list">
+            <li>Setup sem gastar muito, câmera, luz, mic</li>
+            <li>Roteiro e storytelling para vídeos que vendem</li>
+            <li>Edição com IA, CapCut, Opus Clip, ElevenLabs</li>
+            <li>Estratégia de Reels para crescer rápido</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-coming">Em breve</span>
+          <div class="module-card-header">
+            <span class="module-emoji">📈</span>
+            <div>
+              <div class="module-name">Marketing para Negócios</div>
+            </div>
+          </div>
+          <p class="module-desc">Escalar negócio físico ou criar um digital do zero. A estratégia completa.</p>
+          <ul class="module-lessons-list">
+            <li>Do físico para o digital, passo a passo</li>
+            <li>Instagram como canal de vendas</li>
+            <li>Captação com IA no Instagram e TikTok</li>
+            <li>Estratégia de conteúdo para vender sem parecer vendendo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-card-top"></div>
+        <div class="module-card-body">
+          <span class="module-tag tag-coming">Em breve</span>
+          <div class="module-card-header">
+            <span class="module-emoji">💰</span>
+            <div>
+              <div class="module-name">Vendas e Copy</div>
+            </div>
+          </div>
+          <p class="module-desc">Transformar atenção em dinheiro. A habilidade que mais gera retorno no digital.</p>
+          <ul class="module-lessons-list">
+            <li>Copywriting com IA, textos que vendem</li>
+            <li>Como construir uma oferta irresistível</li>
+            <li>Funil de vendas simples e eficiente</li>
+            <li>Scripts de fechamento para WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MONTHLY -->
+<section class="monthly">
+  <div class="container">
+    <p class="section-label">Todo mês, sem falta</p>
+    <h2 class="section-title">O que chega de novo<br>enquanto você está dentro</h2>
+    <p class="section-sub">É isso que faz o membership valer mês após mês, o conteúdo não para.</p>
+    <div class="monthly-grid">
+      <div class="monthly-card">
+        <div class="monthly-icon">🛠</div>
+        <div class="monthly-title">Ferramenta do Mês</div>
+        <div class="monthly-desc">1 ferramenta nova de IA por mês. O mercado muda rápido, você fica à frente.</div>
+      </div>
+      <div class="monthly-card">
+        <div class="monthly-icon">🎙</div>
+        <div class="monthly-title">Q&A ao vivo</div>
+        <div class="monthly-desc">Encontro ao vivo todo mês com o Ricardo para tirar dúvidas e debater o que importa pra você.</div>
+      </div>
+      <div class="monthly-card">
+        <div class="monthly-icon">📋</div>
+        <div class="monthly-title">Prompt Pack</div>
+        <div class="monthly-desc">Pacote de prompts prontos por tema. Pega, usa e economiza horas.</div>
+      </div>
+      <div class="monthly-card">
+        <div class="monthly-icon">🏆</div>
+        <div class="monthly-title">Case de Aluno</div>
+        <div class="monthly-desc">Resultado real de quem aplicou. Vai te lembrar por que você entrou aqui.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-photo">
+        <img src="assets/images/ricardo-grauppe.avif" alt="Ricardo Grauppe, fundador da A Nova Era" width="960" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="about-content">
+        <p class="section-label">Quem vai te ensinar</p>
+        <h2 class="section-title" style="font-size: clamp(1.6rem,3vw,2.2rem);">Ricardo Grauppe,<br><span class="brand-mark"><span class="grad-text">fundador da </span><span class="brand-emoji" aria-hidden="true">🧠</span><span class="grad-text"> A Nova Era</span></span></h2>
+        <p style="color:var(--muted); font-size:.95rem; margin-top:14px; line-height:1.7;">
+          Comecei estudando IA por pura curiosidade. Enquanto todo mundo ainda estava tentando entender o que era o ChatGPT, eu já estava usando pra construir sistemas reais de marketing e automação na minha agência.
+        </p>
+        <p style="color:var(--muted); font-size:.95rem; margin-top:12px; line-height:1.7;">
+          2 anos de agência digital me ensinaram o que funciona de verdade, não teoria de livro, não guru de internet. Resultado prático com clientes reais.
+        </p>
+        <p style="color:var(--muted); font-size:.95rem; margin-top:12px; line-height:1.7;">
+          🧠 A Nova Era nasceu porque eu queria passar isso adiante. Já treinei mais de 80 visionários, e agora quero ir mais longe.
+        </p>
+        <ul class="about-list">
+          <li><span>🏢</span> 2 anos de agência digital com clientes reais</li>
+          <li><span>🤖</span> Especialista em IA aplicada a marketing e automação</li>
+          <li><span>🎥</span> Criador de conteúdo e especialista em captação de vídeo</li>
+          <li><span>👥</span> +80 alunos treinados na 🧠 A Nova Era</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <p class="section-label">Quem já está dentro</p>
+    <h2 class="section-title">Resultados reais de<br>pessoas reais</h2>
+    <p class="section-sub" style="margin-bottom:40px;">
+      <!-- INSTRUÇÃO: Substitua pelos depoimentos reais dos seus 5 alunos -->
+      Adicione aqui os prints de mensagens dos seus alunos. Os cards abaixo são exemplos.
+    </p>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          <!-- INSTRUÇÃO: Cole aqui o depoimento real do aluno 1 -->
+          Nunca pensei que ia conseguir montar meu próprio CRM e ainda automatizar o atendimento do meu negócio. Antes perdia cliente por falta de follow up. Hoje o sistema faz isso por mim.
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A1</div>
+          <div>
+            <div class="testimonial-name">Aluno 1, substitua pelo nome real</div>
+            <div class="testimonial-role">Adicione a profissão ou cidade</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          <!-- INSTRUÇÃO: Cole aqui o depoimento real do aluno 2 -->
+          Em 4 semanas aprendi mais sobre digital do que nos últimos 2 anos tentando sozinho. A forma como o Ricardo ensina é diferente, é direto, é prático e é real.
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A2</div>
+          <div>
+            <div class="testimonial-name">Aluno 2, substitua pelo nome real</div>
+            <div class="testimonial-role">Adicione a profissão ou cidade</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">
+          <!-- INSTRUÇÃO: Cole aqui o depoimento real do aluno 3 -->
+          Eu tinha um negócio físico e não sabia como levar pro digital. Agora tenho site no ar, perfil no Instagram com estratégia e um processo de captação rodando. Não sabia que era possível tão rápido.
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A3</div>
+          <div>
+            <div class="testimonial-name">Aluno 3, substitua pelo nome real</div>
+            <div class="testimonial-role">Adicione a profissão ou cidade</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">Investimento</p>
+    <h2 class="section-title" style="text-align:center;">Tudo incluído no membership.</h2>
+    <p class="section-sub" style="text-align:center; margin: 0 auto 48px;">Tudo que você precisa para crescer no digital, em um único lugar.</p>
+    <div class="pricing-wrap">
+      <div class="pricing-card">
+        <div class="pricing-badge">✦ Membership Mensal</div>
+        <p class="pricing-plan">🧠 A Nova Era</p>
+        <ul class="pricing-features">
+          <li><span>✓</span> Acesso a todos os módulos disponíveis</li>
+          <li><span>✓</span> Novos módulos liberados todo mês</li>
+          <li><span>✓</span> Q&A ao vivo mensal com Ricardo</li>
+          <li><span>✓</span> Prompt Pack (50+ prompts)</li>
+          <li><span>✓</span> Aula da ferramenta nova do mês</li>
+          <li><span>✓</span> Comunidade exclusiva de membros</li>
+          <li><span>✓</span> Cases e resultados de alunos</li>
+          <li><span>✓</span> Acesso às gravações originais "Despertar Digital"</li>
+        </ul>
+        <a href="#" class="btn-primary pricing-cta">Entrar na 🧠 A Nova Era agora →</a>
+        <p class="pricing-guarantee">🔒 Pagamento seguro, cancele a qualquer momento</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <p class="section-label" style="text-align:center;">Dúvidas</p>
+    <h2 class="section-title" style="text-align:center; margin-bottom:40px;">Perguntas frequentes</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Preciso ter experiência em tecnologia pra entrar?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Não. A trilha começa do zero. A Aula 1 é feita especificamente pra quem nunca tocou em IA antes. Se você sabe usar WhatsApp e Instagram, você consegue acompanhar tudo.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Como funciona o acesso ao conteúdo?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Após confirmar o pagamento, você recebe acesso imediato à plataforma com todos os módulos disponíveis. Novos módulos são adicionados mensalmente e ficam disponíveis pra você automaticamente enquanto estiver com a assinatura ativa.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Posso cancelar quando quiser?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Sim. O membership não tem fidelidade. Se você quiser cancelar, é só pedir. Seu acesso continua até o final do período pago e não é cobrado novamente.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Funciona para quem tem um negócio físico?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Especialmente pra você. O Módulo 6 foi criado exatamente pra quem tem loja, serviço ou qualquer negócio presencial e quer aprender a captar clientes e vender no digital. Vários dos nossos alunos vieram dessa situação.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Quantas horas por semana eu preciso dedicar?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          O conteúdo foi pensado para quem tem rotina cheia. 2 a 3 horas por semana já são suficientes para acompanhar o ritmo e começar a aplicar. Tudo fica gravado, então você assiste no seu tempo.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          As ferramentas ensinadas são pagas?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A maioria tem plano gratuito que já resolve pra começar, ChatGPT, ClickUp, Fathom, Vercel, GitHub, N8N. Algumas têm planos pagos pra escalar depois, mas você não precisa gastar nada extra pra fazer os módulos iniciais.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Qual a diferença entre 🧠 A Nova Era e outros cursos de IA?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          A maioria dos cursos ensina IA no vácuo. Aqui, tudo está conectado com negócio real: marketing, vendas, vídeo, automação e programação, tudo junto, com aplicação prática e contexto. E o conteúdo cresce todo mês, não é um curso engessado.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>🧠 A Nova Era já começou.<br><span class="grad-text">Só falta você acordar.</span></h2>
+    <p>Cada mês que passa sem entrar é mais um mês parado enquanto o digital segue em frente sem você.</p>
+    <a href="#pricing" class="btn-primary" style="font-size:1.1rem; padding:20px 44px;">
+      Entrar na 🧠 A Nova Era agora →
+    </a>
+    <p style="margin-top:16px; font-size:.8rem; color:var(--muted);">Acesso imediato, cancele quando quiser, $97/mês</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo brand-mark"><span class="brand-emoji" aria-hidden="true">🧠</span><span class="grad-text">A Nova Era</span></div>
+    <p class="footer-text" style="margin-top:8px;">
+      © 2026 Ricardo Grauppe | 🧠 A Nova Era,
+      <a href="#" style="color:var(--muted); text-decoration:none;">Política de Privacidade</a>,
+      <a href="#" style="color:var(--muted); text-decoration:none;">Termos de Uso</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.module-card, .testimonial-card, .problem-card, .monthly-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
